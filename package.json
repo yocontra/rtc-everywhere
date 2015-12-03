@@ -1,0 +1,38 @@
+{
+  "name": "rtc-everywhere",
+  "description": "Cross-everything WebRTC Adapter/Polyfill",
+  "version": "0.0.1",
+  "homepage": "http://github.com/contra/rtc-everywhere",
+  "repository": "git://github.com/contra/rtc-everywhere.git",
+  "author": "Contra <contra@maricopa.edu> (http://contra.io)",
+  "dependencies": {
+    "detect-browser": "^1.2.0",
+    "ortc-adapter": "^0.1.6"
+  },
+  "devDependencies": {
+    "istanbul-coveralls": "^1.0.1",
+    "jshint": "^2.5.11",
+    "jshint-stylish": "^2.0.0",
+    "mochify": "dylanfm/mochify.js",
+    "mochify-istanbul": "^2.1.1",
+    "should": "^7.0.0"
+  },
+  "optionalDependencies": {
+    "wrtc": "^0.0.59"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "lint": "jshint index.js lib --exclude node_modules --config .jshintrc --reporter node_modules/jshint-stylish/index.js",
+    "test": "npm run-script lint && mochify --recursive --reporter spec",
+    "coveralls": "mochify --recursive --plugin [ mochify-istanbul --exclude '**/+(test|node_modules)/**/*' --report lcov --dir ./coverage ] && istanbul-coveralls"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/contra/rtc-everywhere/raw/master/LICENSE"
+    }
+  ]
+}
