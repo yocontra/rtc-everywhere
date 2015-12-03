@@ -24,6 +24,15 @@ npm install rtc-everywhere --save
 
 TODO: Real documentation inbound
 
+## Supported Platforms
+- Chrome
+- Firefox
+- iOS (via cordova-iosrtc)
+- Android (via cordova-crosswalk)
+- Safari (via Plugin)
+- Internet Explorer (via ActiveX)
+- MS Edge (via ORTC)
+
 ## Example
 
 ```js
