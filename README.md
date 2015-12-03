@@ -42,12 +42,12 @@ TODO: Finish these docs
 ### [RTCPeerConnection](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)
 ### [RTCIceCandidate](http://html5index.org/WebRTC%20-%20RTCIceCandidate.html)
 ### [RTCSessionDescription](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)
-### [getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia)
+### [getUserMedia(constraints, cb)](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia)
 #### Differences
-- `constraints` option is optional
+- `constraints` is optional
   - Defaults to `{video: true, audio: true}`
 
-- `callback argument` is a node-style error first callback
+- `cb` is a node-style error first callback
 
 ```js
 rtc.getUserMedia(function(err, stream){});
