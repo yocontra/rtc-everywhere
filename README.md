@@ -67,6 +67,10 @@ rtc.getUserMedia(function(err, stream){});
 rtc.getUserMedia({video: true, audio: true}, function(err, stream){});
 ```
 
+## Related Libraries
+- [simple-peer](https://github.com/feross/simple-peer)
+- [blob-util](https://github.com/nolanlawson/blob-util)
+
 ## LICENSE
 (MIT License)
 
