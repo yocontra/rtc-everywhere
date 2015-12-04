@@ -1,4 +1,4 @@
-# rtc-everywhere [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support us][gittip-image]][gittip-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
+# rtc-everywhere [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 ## Information
 <table>
 <tr>
@@ -11,8 +11,7 @@
 </tr>
 </table>
 
-## Usage
-## Install
+### Install
 
 ```
 npm install rtc-everywhere --save
@@ -20,7 +19,7 @@ npm install rtc-everywhere --save
 
 TODO: Real documentation inbound
 
-## Supported Platforms
+### Supported Platforms
 - Chrome
 - Firefox
 - Node.js (via wrtc)
@@ -30,7 +29,7 @@ TODO: Real documentation inbound
 - Internet Explorer (via Telerik ActiveX)
 - MS Edge (via ORTC)
 
-## Example
+### Example
 
 ```js
 var rtc = require('rtc-everywhere')();
@@ -42,21 +41,21 @@ var rtc = require('rtc-everywhere')();
 // rtc.getUserMedia
 ```
 
-## API
-### RTCPeerConnection
+### API
+#### RTCPeerConnection
 [Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)
 
-### RTCIceCandidate
+#### RTCIceCandidate
 [Specification Documentation](http://html5index.org/WebRTC%20-%20RTCIceCandidate.html)
 
-### RTCSessionDescription
+#### RTCSessionDescription
 [Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)
 
-### getUserMedia(constraints, cb)
+#### getUserMedia(constraints, cb)
 [Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia)
 
-#### Modifications
-- `constraints` is optional
+##### Modifications
+- `constraints` is optional (makes things easier)
   - Defaults to `{video: true, audio: true}`
 
 - `cb` is a node-style error first callback
@@ -67,11 +66,11 @@ rtc.getUserMedia(function(err, stream){});
 rtc.getUserMedia({video: true, audio: true}, function(err, stream){});
 ```
 
-## Related Libraries
+### Related Libraries
 - [simple-peer](https://github.com/feross/simple-peer)
 - [blob-util](https://github.com/nolanlawson/blob-util)
 
-## LICENSE
+### LICENSE
 (MIT License)
 
 Copyright (c) 2015 Contra [contra@maricopa.edu](mailto:contra@maricopa.edu)
@@ -82,15 +81,11 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[gittip-url]: https://www.gittip.com/contra/
-[gittip-image]: http://img.shields.io/gittip/contra.svg
 [downloads-image]: http://img.shields.io/npm/dm/rtc-everywhere.svg
 [npm-url]: https://npmjs.org/package/rtc-everywhere
 [npm-image]: http://img.shields.io/npm/v/rtc-everywhere.svg
 [travis-url]: https://travis-ci.org/contra/rtc-everywhere
 [travis-image]: https://travis-ci.org/contra/rtc-everywhere.png?branch=master
-[coveralls-url]: https://coveralls.io/r/contra/rtc-everywhere
-[coveralls-image]: https://coveralls.io/repos/contra/rtc-everywhere/badge.png
 [depstat-url]: https://david-dm.org/contra/rtc-everywhere
 [depstat-image]: https://david-dm.org/contra/rtc-everywhere.png
 [david-url]: https://david-dm.org/contra/rtc-everywhere
