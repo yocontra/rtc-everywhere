@@ -1,7 +1,7 @@
 {
   "name": "rtc-everywhere",
   "description": "Cross-everything WebRTC Adapter/Polyfill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "http://github.com/contra/rtc-everywhere",
   "repository": "git://github.com/contra/rtc-everywhere.git",
   "author": "Contra <contra@maricopa.edu> (http://contra.io)",
