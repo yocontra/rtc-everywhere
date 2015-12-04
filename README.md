@@ -9,10 +9,6 @@
 <td>Description</td>
 <td>Cross-everything WebRTC Adapter/Polyfill</td>
 </tr>
-<tr>
-<td>Node Version</td>
-<td>>= 0.10</td>
-</tr>
 </table>
 
 ## Usage
@@ -27,10 +23,11 @@ TODO: Real documentation inbound
 ## Supported Platforms
 - Chrome
 - Firefox
+- Node.js (via wrtc)
 - iOS (via cordova-iosrtc)
 - Android (via cordova-crosswalk)
-- Safari (via Plugin)
-- Internet Explorer (via ActiveX)
+- Safari (via Telerik Plugin)
+- Internet Explorer (via Telerik ActiveX)
 - MS Edge (via ORTC)
 
 ## Example
@@ -46,22 +43,28 @@ var rtc = require('rtc-everywhere')();
 ```
 
 ## API
-TODO: Finish these docs
+### RTCPeerConnection
+[Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)
 
-### [RTCPeerConnection](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)
-### [RTCIceCandidate](http://html5index.org/WebRTC%20-%20RTCIceCandidate.html)
-### [RTCSessionDescription](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)
-### [getUserMedia(constraints, cb)](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia)
-#### Differences
+### RTCIceCandidate
+[Specification Documentation](http://html5index.org/WebRTC%20-%20RTCIceCandidate.html)
+
+### RTCSessionDescription
+[Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)
+
+### getUserMedia(constraints, cb)
+[Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia)
+
+#### Modifications
 - `constraints` is optional
   - Defaults to `{video: true, audio: true}`
 
 - `cb` is a node-style error first callback
 
 ```js
+// these are the same thing
 rtc.getUserMedia(function(err, stream){});
 rtc.getUserMedia({video: true, audio: true}, function(err, stream){});
-rtc.getUserMedia({video: true}, function(err, stream){});
 ```
 
 ## LICENSE
