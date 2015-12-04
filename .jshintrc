@@ -1,6 +1,6 @@
 {
   "camelcase": true,
-  "curly": true,
+  "curly": false,
   "eqeqeq": true,
   "freeze": true,
   "indent": 2,
@@ -15,5 +15,9 @@
   "undef": true,
   "unused": true,
   "node": true,
-  "mocha": true
+  "browser": true,
+  "mocha": true,
+  "globals": {
+    "cordova": true
+  }
 }
