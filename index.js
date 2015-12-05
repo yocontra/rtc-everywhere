@@ -2,11 +2,15 @@
 
 var browser = require('detect-browser');
 
+// TODO: need better platform detection
+// TODO: need react-native detection
+// TODO: cordova-ios = cordova? and browser === 'ios'
+
 var getUserMedia, rtc;
 switch (browser.name) {
   case 'node':
     getUserMedia = require('./lib/getUserMedia/node');
-    rtc = require('./lib/rtc/node');
+    rtc = require('./lib/rtc/unsupported');
     break;
   case 'ios':
     getUserMedia = require('./lib/getUserMedia/cordova-ios');
@@ -30,10 +34,10 @@ switch (browser.name) {
     break;
 }
 
-module.exports = function() {
-  var ctors = rtc();
+module.exports = function(opt) {
+  var ctors = rtc(opt);
   return {
-    getUserMedia: getUserMedia(),
+    getUserMedia: getUserMedia(opt),
     RTCPeerConnection: ctors.RTCPeerConnection,
     RTCSessionDescription: ctors.RTCSessionDescription,
     RTCIceCandidate: ctors.RTCIceCandidate

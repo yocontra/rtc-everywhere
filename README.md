@@ -19,25 +19,25 @@ npm install rtc-everywhere --save
 
 TODO: More documentation inbound
 
-### Supported Platforms
+### Supported Environments
 
 #### Desktop
 
 - Chrome
 - Firefox
-- Safari (via Telerik Plugin)
-- Internet Explorer (via Telerik ActiveX)
-- MS Edge (via ORTC)
+- Safari 7+ (via Temasys Plugin)
+- Internet Explorer 9+ (via Temasys Plugin)
+- MS Edge (via ORTC -> WebRTC polyfill)
 
 #### Mobile
 
+- Android 5+
 - Cordova iOS (via cordova-iosrtc)
 - Cordova Android (via cordova-crosswalk)
 - react-native iOS (via react-native-webrtc)
 - react-native Android (via react-native-webrtc)
-- Android Chrome
 
-#### Node.js
+#### Other
 
 - Node.js 0.10+ (via wrtc)
 
