@@ -1,21 +1,10 @@
 # rtc-everywhere [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
-## Information
-<table>
-<tr>
-<td>Package</td>
-<td>rtc-everywhere</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Cross-everything WebRTC Adapter/Polyfill</td>
-</tr>
-</table>
 
-### Install
+![fancy thing](https://i.imgur.com/xDnqJCo.gif)
 
-```
-npm install rtc-everywhere --save
-```
+## What is this?
+
+Hidden in the incompatible mess of vendor prefixes, adapters, plugins, extensions, and native modules - WebRTC is available. This library aims to tie the whole ecosystem together and ensure your code works the same in any environment.
 
 TODO: More documentation inbound
 
@@ -42,6 +31,10 @@ TODO: More documentation inbound
 - Node.js 0.10+ (via wrtc)
 
 ### Example
+
+```
+npm install rtc-everywhere --save
+```
 
 ```js
 var rtc = require('rtc-everywhere')();
