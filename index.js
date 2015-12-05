@@ -9,8 +9,8 @@ var browser = require('detect-browser');
 var getUserMedia, rtc;
 switch (browser.name) {
   case 'node':
-    getUserMedia = require('./lib/getUserMedia/node');
-    rtc = require('./lib/rtc/unsupported');
+    getUserMedia = require('./lib/getUserMedia/unsupported');
+    rtc = require('./lib/rtc/node');
     break;
   case 'ios':
     getUserMedia = require('./lib/getUserMedia/cordova-ios');
@@ -29,7 +29,7 @@ switch (browser.name) {
     rtc = require('./lib/rtc/edge');
     break;
   default:
-    getUserMedia = require('./lib/getUserMedia/browser');
+    getUserMedia = require('./lib/getUserMedia/unsupported');
     rtc = require('./lib/rtc/unsupported');
     break;
 }
