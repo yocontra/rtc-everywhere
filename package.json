@@ -37,7 +37,8 @@
     "should": "^7.0.0"
   },
   "optionalDependencies": {
-    "wrtc": "^0.0.59"
+    "wrtc": "^0.0.59",
+    "react-native-webrtc": "^0.1.5"
   },
   "main": "./index.js",
   "scripts": {
@@ -53,7 +54,8 @@
     ]
   },
   "browser": {
-    "wrtc": false
+    "wrtc": false,
+    "react-native-webrtc": false
   },
   "engines": {
     "node": ">= 0.10"

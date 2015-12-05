@@ -17,17 +17,29 @@
 npm install rtc-everywhere --save
 ```
 
-TODO: Real documentation inbound
+TODO: More documentation inbound
 
 ### Supported Platforms
+
+#### Desktop
+
 - Chrome
 - Firefox
-- Node.js (via wrtc)
-- iOS (via cordova-iosrtc)
-- Android (via cordova-crosswalk)
 - Safari (via Telerik Plugin)
 - Internet Explorer (via Telerik ActiveX)
 - MS Edge (via ORTC)
+
+#### Mobile
+
+- Cordova iOS (via cordova-iosrtc)
+- Cordova Android (via cordova-crosswalk)
+- react-native iOS (via react-native-webrtc)
+- react-native Android (via react-native-webrtc)
+- Android Chrome
+
+#### Node.js
+
+- Node.js 0.10+ (via wrtc)
 
 ### Example
 

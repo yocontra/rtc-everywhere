@@ -9,8 +9,8 @@ switch (browser.name) {
     rtc = require('./lib/rtc/node');
     break;
   case 'ios':
-    getUserMedia = require('./lib/getUserMedia/ios');
-    rtc = require('./lib/rtc/ios');
+    getUserMedia = require('./lib/getUserMedia/cordova-ios');
+    rtc = require('./lib/rtc/cordova-ios');
     break;
   case 'chrome':
     getUserMedia = require('./lib/getUserMedia/browser');
