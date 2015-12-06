@@ -34,7 +34,8 @@
     "mocha": "^2.3.4",
     "mochify": "dylanfm/mochify.js",
     "mochify-istanbul": "^2.1.1",
-    "should": "^7.0.0"
+    "should": "^7.0.0",
+    "simple-peer": "^5.11.6"
   },
   "optionalDependencies": {
     "wrtc": "^0.0.59",
