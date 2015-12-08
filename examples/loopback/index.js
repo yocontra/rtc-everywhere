@@ -1,11 +1,12 @@
 var rtc = require('../../')();
 var Peer = require('simple-peer');
+var crel = require('crel');
 
 function makeVideo() {
-  var el = document.createElement('video');
-  el.muted = true;
-  el.autoplay = true;
-  return el;
+  return crel('video', {
+    muted: true,
+    autoplay: true
+  });
 }
 var vid = makeVideo();
 var vid2 = makeVideo();
@@ -33,11 +34,11 @@ rtc.getUserMedia(function(err, stream){
 
   initiator.once('stream', function(stream){
     vid.src = URL.createObjectURL(stream);
-    document.body.appendChild(vid);
+    crel(document.body, vid);
   });
 
   receiver.once('stream', function(stream){
     vid2.src = URL.createObjectURL(stream);
-    document.body.appendChild(vid2);
+    crel(document.body, vid2);
   });
 });
