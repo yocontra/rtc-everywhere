@@ -1,11 +1,14 @@
 'use strict';
 
 module.exports = function() {
+  var rtc;
   if (typeof navigator === 'undefined') return;
-  var getUserMedia = navigator.getUserMedia ||
-    navigator.webkitGetUserMedia ||
-    navigator.mozGetUserMedia ||
-    navigator.msGetUserMedia;
+  try {
+    rtc = require('react-native-webrtc');
+  } catch (err) {
+    return;
+  }
+  var getUserMedia = navigator.getUserMedia;
   if (typeof getUserMedia === 'undefined') return;
 
   return function(constraints, cb) {

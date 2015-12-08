@@ -28,6 +28,8 @@
     "ortc-adapter": "^0.1.6"
   },
   "devDependencies": {
+    "bulk-require": "^0.2.1",
+    "bulkify": "^1.1.1",
     "istanbul-coveralls": "^1.0.1",
     "jshint": "^2.5.11",
     "jshint-stylish": "^2.0.0",
@@ -35,10 +37,10 @@
     "mochify": "dylanfm/mochify.js",
     "mochify-istanbul": "^2.1.1",
     "should": "^7.0.0",
-    "simple-peer": "^5.11.6"
+    "simple-peer": "^5.11.6",
+    "watchify": "^3.6.1"
   },
   "optionalDependencies": {
-    "wrtc": "^0.0.59",
     "react-native-webrtc": "^0.1.5"
   },
   "main": "./index.js",
@@ -51,7 +53,8 @@
   },
   "browserify": {
     "transform": [
-      "browserify-optional"
+      "browserify-optional",
+      "bulkify"
     ]
   },
   "browser": {
