@@ -1,5 +1,9 @@
 'use strict';
 
 module.exports = function() {
-  return {};
+  return {
+    RTCPeerConnection: null,
+    RTCSessionDescription: null,
+    RTCIceCandidate: null
+  };
 };
