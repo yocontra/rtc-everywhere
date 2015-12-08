@@ -24,12 +24,8 @@ rtc.getUserMedia(function(err, stream){
     wrtc: rtc
   });
 
-  initiator.on('signal', function(m){
-    receiver.signal(m);
-  });
-  receiver.on('signal', function(m){
-    initiator.signal(m);
-  });
+  initiator.on('signal', receiver.signal.bind(receiver));
+  receiver.on('signal', initiator.signal.bind(initiator));
 
   initiator.once('connect', function(){
     console.log('Connected!');
