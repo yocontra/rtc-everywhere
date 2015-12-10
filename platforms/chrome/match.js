@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = function(){
-  return typeof window.chrome !== 'undefined';
+  return typeof window!== 'undefined' &&
+    typeof window.chrome !== 'undefined';
 };

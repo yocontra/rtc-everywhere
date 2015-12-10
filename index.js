@@ -6,7 +6,7 @@ module.exports = function(opt) {
   var platform = findPlatform();
   var ctors = platform.rtc(opt);
   var gum = platform.gum(opt);
-  var supported = !!gum && !!ctors.RTCPeerConnection;
+  var supported = !!ctors.RTCPeerConnection;
 
   return {
     supported: supported,

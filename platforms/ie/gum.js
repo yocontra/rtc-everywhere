@@ -1,8 +1,7 @@
 'use strict';
 
-var temasys = require('../../lib/temasys');
-
 module.exports = function() {
+  var temasys = require('../../lib/temasys');
   temasys(); // start loading ahead of time
 
   return function(constraints, cb) {

@@ -20,11 +20,17 @@ describe('rtc()', function(){
   it('should export the correct keys', function(done) {
     var val = rtc();
     Object.keys(val).should.eql([
+      'supported',
       'getUserMedia',
       'RTCPeerConnection',
       'RTCSessionDescription',
       'RTCIceCandidate'
     ]);
+    done();
+  });
+  it('should be supported', function(done) {
+    var val = rtc();
+    val.supported.should.equal(true);
     done();
   });
 });
