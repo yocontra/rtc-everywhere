@@ -1,0 +1,7 @@
+- finish safari support
+- finish IE support
+  - ie wont load invisible plugins
+- add option to check if plugin is installed and prompt user to install
+  - https://github.com/Temasys/AdapterJS/blob/master/source/adapter.plugin.rtc.adapter.js#L122
+- do MediaStreamTrack.getSources
+- screen sharing support
