@@ -27,6 +27,7 @@
     "crel": "^2.1.8",
     "detect-browser": "^1.2.0",
     "domready": "^1.0.8",
+    "new-operator": "^1.0.3",
     "ortc-adapter": "^0.1.6",
     "uuid": "^2.0.1"
   },

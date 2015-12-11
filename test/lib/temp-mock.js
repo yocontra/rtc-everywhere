@@ -13,6 +13,7 @@ describe('temp-mock', function() {
       done();
     });
   });
+
   it('should play back a method', function(done) {
     var Clazz = mock({
       methods: ['test']

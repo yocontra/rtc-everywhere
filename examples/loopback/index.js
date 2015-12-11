@@ -2,17 +2,20 @@ var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
 
-function makeVideo() {
-  return crel('video', {
-    muted: true,
-    autoplay: true,
-    style: 'opacity:0;'
-  });
+function makeTemVideo(stream) {
+  var tem = require('../../lib/temasys');
+  return tem.createVideo(stream);
 }
-var vid = makeVideo();
-var vid2 = makeVideo();
-
-console.log(rtc);
+function makeVideo(stream) {
+  if (!!navigator.platform.match(/^Mac/i)) {
+    return makeTemVideo(stream);
+  }
+  var el = crel('video');
+  el.muted = true;
+  el.autoplay = true;
+  el.src = URL.createObjectURL(stream);
+  return el;
+}
 
 rtc.getUserMedia(function(err, stream){
   var initiator = new Peer({
@@ -26,6 +29,9 @@ rtc.getUserMedia(function(err, stream){
     wrtc: rtc
   });
 
+  initiator.on('error', console.error.bind(console));
+  receiver.on('error', console.error.bind(console));
+
   initiator.on('signal', receiver.signal.bind(receiver));
   receiver.on('signal', initiator.signal.bind(initiator));
 
@@ -34,12 +40,10 @@ rtc.getUserMedia(function(err, stream){
   });
 
   initiator.once('stream', function(stream){
-    vid.src = URL.createObjectURL(stream);
-    crel(document.body, vid);
+    crel(document.body, makeVideo(stream));
   });
 
   receiver.once('stream', function(stream){
-    vid2.src = URL.createObjectURL(stream);
-    crel(document.body, vid2);
+    crel(document.body, makeVideo(stream));
   });
 });
