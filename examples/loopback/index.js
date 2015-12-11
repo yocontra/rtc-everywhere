@@ -5,7 +5,8 @@ var crel = require('crel');
 function makeVideo() {
   return crel('video', {
     muted: true,
-    autoplay: true
+    autoplay: true,
+    style: 'opacity:0;'
   });
 }
 var vid = makeVideo();
