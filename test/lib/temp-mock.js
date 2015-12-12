@@ -84,6 +84,24 @@ describe('temp-mock', function() {
     done();
   });
 
+  it('should play back a function set', function(done) {
+    var Clazz = mock({
+      properties: ['test']
+    });
+    var o = new Clazz();
+    o.test = function(a){
+      should.exist(a);
+      a.should.equal(123);
+      done();
+    };
+
+    var actual = function(){
+      return {};
+    };
+    var inst = mock.resolve(o, actual);
+    inst.test(123);
+  });
+
   it('should play back two sets', function(done) {
     var Clazz = mock({
       properties: ['test']

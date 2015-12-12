@@ -2,6 +2,11 @@ var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
 
+function debug(peer){
+  peer.on('signal', function(m){
+    console.log('[debug] signal', m);
+  });
+}
 function makeTemVideo(stream) {
   var tem = require('../../lib/temasys');
   return tem.createVideo(stream);
@@ -29,6 +34,9 @@ rtc.getUserMedia(function(err, stream){
     wrtc: rtc
   });
 
+  debug(initiator);
+  debug(receiver);
+
   initiator.on('error', console.error.bind(console));
   receiver.on('error', console.error.bind(console));
 
@@ -40,6 +48,7 @@ rtc.getUserMedia(function(err, stream){
   });
 
   initiator.once('stream', function(stream){
+    console.log('got stream');
     crel(document.body, makeVideo(stream));
   });
 
