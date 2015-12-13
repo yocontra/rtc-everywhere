@@ -34,6 +34,7 @@
   "devDependencies": {
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
+    "es5-shim-sham": "0.0.1",
     "istanbul-coveralls": "^1.0.1",
     "jshint": "^2.5.11",
     "jshint-stylish": "^2.0.0",

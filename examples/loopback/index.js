@@ -1,3 +1,5 @@
+require('es5-shim-sham');
+
 var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
@@ -24,6 +26,9 @@ function makeVideo(stream) {
 }
 
 rtc.getUserMedia(function(err, stream){
+  if (err) {
+    return console.error(err);
+  }
   var initiator = new Peer({
     initiator: true,
     stream: stream,
