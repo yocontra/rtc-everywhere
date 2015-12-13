@@ -84,6 +84,21 @@ describe('temp-mock', function() {
     done();
   });
 
+  it('should forward a set after resolve', function(done) {
+    var Clazz = mock({
+      properties: ['test']
+    });
+    var o = new Clazz();
+    var actual = function(){
+      return {};
+    };
+    var inst = mock.resolve(o, actual);
+    o.test = 456;
+    inst.test.should.equal(456);
+    o.test.should.equal(456);
+    done();
+  });
+
   it('should play back a function set', function(done) {
     var Clazz = mock({
       properties: ['test']

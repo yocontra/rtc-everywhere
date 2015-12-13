@@ -4,7 +4,7 @@ var crel = require('crel');
 
 function debug(peer){
   peer.on('signal', function(m){
-    console.log('[debug] signal', m);
+    //console.log('[debug] signal', m);
   });
 }
 function makeTemVideo(stream) {
