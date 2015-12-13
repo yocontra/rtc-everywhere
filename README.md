@@ -78,7 +78,7 @@ rtc.getUserMedia({video: true, audio: true}, function(err, stream){});
 ### LICENSE
 (MIT License)
 
-Copyright (c) 2015 Contra [contra@maricopa.edu](mailto:contra@maricopa.edu)
+Copyright (c) 2015 Contra [contra@maricopa.edu](mailto:yo@contra.io)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
