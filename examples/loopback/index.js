@@ -1,10 +1,11 @@
 var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
+var browser = require('detect-browser');
 
 function debug(peer){
   peer.on('signal', function(m){
-    //console.log('[debug] signal', m);
+    console.debug('[debug] signal', m);
   });
 }
 function makeTemVideo(stream) {
@@ -12,7 +13,7 @@ function makeTemVideo(stream) {
   return tem.createVideo(stream);
 }
 function makeVideo(stream) {
-  if (!!navigator.platform.match(/^Mac/i)) {
+  if (browser.name === 'safari' || browser.name === 'ie') {
     return makeTemVideo(stream);
   }
   var el = crel('video');
