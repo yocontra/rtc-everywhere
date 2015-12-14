@@ -6,6 +6,7 @@ module.exports = function(opt) {
   var platform = findPlatform();
   var ctors = platform.rtc(opt);
   var gum = platform.gum(opt);
+  var attachStream = platform.attachStream(opt);
   var supported = !!ctors.RTCPeerConnection;
 
   return {
@@ -14,6 +15,6 @@ module.exports = function(opt) {
     RTCPeerConnection: ctors.RTCPeerConnection,
     RTCSessionDescription: ctors.RTCSessionDescription,
     RTCIceCandidate: ctors.RTCIceCandidate,
-    attachStream: platform.attachStream
+    attachStream: attachStream
   };
 };

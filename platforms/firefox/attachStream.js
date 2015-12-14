@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = function(el, stream) {
-  el.srcObject = stream;
+module.exports = function(){
+  return function(el, stream) {
+    el.srcObject = stream;
+  };
 };

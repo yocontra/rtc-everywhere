@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = function(el, stream) {
-  throw new Error('No DOM, what are you doing?');
+module.exports = module.exports = function(){
+  return function(el, stream) {
+    throw new Error('No DOM, what are you doing?');
+  };
 };

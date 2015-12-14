@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = function(el, stream) {
+module.exports = function(){
+  return function(el, stream) {
   // TODO
+  };
 };
