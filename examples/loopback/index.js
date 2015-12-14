@@ -25,7 +25,7 @@ function makeVideo(stream) {
   return el;
 }
 
-rtc.getUserMedia(function(err, stream){
+rtc.getUserMedia({video: true}, function(err, stream){
   if (err) {
     return console.error(err);
   }
