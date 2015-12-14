@@ -13,6 +13,7 @@ module.exports = function(opt) {
     getUserMedia: gum,
     RTCPeerConnection: ctors.RTCPeerConnection,
     RTCSessionDescription: ctors.RTCSessionDescription,
-    RTCIceCandidate: ctors.RTCIceCandidate
+    RTCIceCandidate: ctors.RTCIceCandidate,
+    attachStream: platform.attachStream
   };
 };

@@ -10,22 +10,15 @@ function debug(peer){
     console.debug('[debug] signal', m);
   });
 }
-function makeTemVideo(stream) {
-  var tem = require('../../lib/temasys');
-  return tem.createVideo(stream);
-}
 function makeVideo(stream) {
-  if (browser.name === 'safari' || browser.name === 'ie') {
-    return makeTemVideo(stream);
-  }
   var el = crel('video');
   el.muted = true;
   el.autoplay = true;
-  el.src = URL.createObjectURL(stream);
+  rtc.attachStream(el, stream);
   return el;
 }
 
-rtc.getUserMedia({video: true}, function(err, stream){
+rtc.getUserMedia(function(err, stream){
   if (err) {
     return console.error(err);
   }
