@@ -14,8 +14,7 @@ function makeVideo(stream) {
   var el = crel('video');
   el.muted = true;
   el.autoplay = true;
-  rtc.attachStream(el, stream);
-  return el;
+  return rtc.attachStream(el, stream);
 }
 
 rtc.getUserMedia(function(err, stream){

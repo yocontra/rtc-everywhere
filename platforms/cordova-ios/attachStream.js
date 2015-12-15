@@ -15,5 +15,7 @@ module.exports = function(){
     el.src = URL.createObjectURL(stream);
     el.setAttribute('webkit-playsinline', 'true');
     cordova.plugins.iosrtc.observeVideo(el);
+
+    return el;
   };
 };
