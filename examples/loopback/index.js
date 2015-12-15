@@ -5,6 +5,8 @@ var Peer = require('simple-peer');
 var crel = require('crel');
 var browser = require('detect-browser');
 
+window.rtc = rtc;
+
 function debug(peer){
   peer.on('signal', function(m){
     console.debug('[debug] signal', m);
@@ -32,8 +34,8 @@ rtc.getUserMedia(function(err, stream){
     wrtc: rtc
   });
 
-  debug(initiator);
-  debug(receiver);
+  //debug(initiator);
+  //debug(receiver);
 
   initiator.on('error', console.error.bind(console));
   receiver.on('error', console.error.bind(console));

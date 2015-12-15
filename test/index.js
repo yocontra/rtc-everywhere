@@ -20,6 +20,7 @@ describe('rtc()', function(){
   it('should export the correct keys', function(done) {
     var val = rtc();
     Object.keys(val).should.eql([
+      'platform',
       'supported',
       'getUserMedia',
       'RTCPeerConnection',

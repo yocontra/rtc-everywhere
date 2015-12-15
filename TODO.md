@@ -10,7 +10,14 @@
 
 # General
 
+- actually add tests
+
+## Enhancements
+
 - debug option
 - platform specific options
+
+## Features
+
 - add MediaStreamTrack.getSources hacks
 - add screen sharing hacks

@@ -3,13 +3,14 @@
 var findPlatform = require('./lib/findPlatform');
 
 module.exports = function(opt) {
-  var platform = findPlatform();
-  var ctors = platform.rtc(opt);
-  var gum = platform.gum(opt);
-  var attachStream = platform.attachStream(opt);
+  var match = findPlatform();
+  var ctors = match.platform.rtc(opt);
+  var gum = match.platform.gum(opt);
+  var attachStream = match.platform.attachStream(opt);
   var supported = !!ctors.RTCPeerConnection;
 
   return {
+    platform: match.name,
     supported: supported,
     getUserMedia: gum,
     RTCPeerConnection: ctors.RTCPeerConnection,
