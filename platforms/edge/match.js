@@ -1,7 +1,6 @@
 'use strict';
 
-var browser = require('detect-browser');
-
 module.exports = function(){
+  var browser = require('detect-browser');
   return browser.name === 'edge';
 };

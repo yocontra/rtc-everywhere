@@ -18,6 +18,7 @@
   "browser": true,
   "mocha": true,
   "globals": {
-    "cordova": true
+    "cordova": true,
+    "ActiveXObject": true
   }
 }

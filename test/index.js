@@ -24,7 +24,8 @@ describe('rtc()', function(){
       'getUserMedia',
       'RTCPeerConnection',
       'RTCSessionDescription',
-      'RTCIceCandidate'
+      'RTCIceCandidate',
+      'attachStream'
     ]);
     done();
   });

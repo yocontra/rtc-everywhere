@@ -1,10 +1,8 @@
 'use strict';
 
 module.exports = function() {
-  if (typeof navigator === 'undefined') return;
   var getUserMedia = navigator.getUserMedia ||
     navigator.mozGetUserMedia;
-  if (typeof getUserMedia === 'undefined') return;
 
   return function(constraints, cb) {
     // make constraints optional

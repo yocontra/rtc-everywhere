@@ -2,7 +2,6 @@
 
 module.exports = function() {
   var rtc;
-  if (typeof navigator === 'undefined') return;
   try {
     rtc = require('react-native-webrtc');
   } catch (err) {

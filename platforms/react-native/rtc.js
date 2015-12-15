@@ -1,7 +1,12 @@
 'use strict';
 
 module.exports = function() {
-  var rtc = require('react-native-webrtc');
+  var rtc;
+  try {
+    rtc = require('react-native-webrtc');
+  } catch (err) {
+    return;
+  }
   return {
     RTCPeerConnection: rtc.RTCPeerConnection,
     RTCSessionDescription: rtc.RTCSessionDescription,

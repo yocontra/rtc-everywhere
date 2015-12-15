@@ -1,10 +1,14 @@
 'use strict';
 
+function needPlatform(){
+  throw new Error('Missing iosrtc plugin for getUserMedia');
+}
+
 module.exports = function() {
   return function(constraints, cb) {
-    if (typeof cordova === 'undefined') return;
-    if (typeof cordova.plugins === 'undefined') return;
-    if (typeof cordova.plugins.iosrtc === 'undefined') return;
+    if (typeof cordova === 'undefined') return needPlatform();
+    if (typeof cordova.plugins === 'undefined') return needPlatform();
+    if (typeof cordova.plugins.iosrtc === 'undefined') return needPlatform();
 
     // make constraints optional
     if (arguments.length !== 2) {
