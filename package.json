@@ -30,7 +30,8 @@
     "domready": "^1.0.8",
     "new-operator": "^1.0.3",
     "ortc-adapter": "^0.1.6",
-    "uuid": "^2.0.1"
+    "uuid": "^2.0.1",
+    "volume-meter": "^2.0.1"
   },
   "devDependencies": {
     "bulk-require": "^0.2.1",
@@ -54,7 +55,7 @@
     "lint": "jshint index.js lib --exclude node_modules --config .jshintrc --reporter node_modules/jshint-stylish/index.js",
     "test-node": "mocha --recursive --reporter spec",
     "test-browser-local": "mochify --recursive --reporter spec",
-    "test": "npm run lint && npm run test-node && npm run-script test-browser-local",
+    "test": "npm run lint && npm run-script test-browser-local",
     "coveralls": "mochify --recursive --plugin [ mochify-istanbul --exclude '**/+(test|node_modules)/**/*' --report lcov --dir ./coverage ] && istanbul-coveralls"
   },
   "browserify": {
