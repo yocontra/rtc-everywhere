@@ -16,6 +16,7 @@ function makeVideo(stream) {
   var el = crel('video', {
     muted: true,
     autoplay: true,
+    className: 'video-stream'
     style: 'height:100px; width:100px; display:inline-block; background-color:black;'
   });
   return rtc.attachStream(el, stream);
