@@ -4,6 +4,7 @@ var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
 var browser = require('detect-browser');
+var isStreamWorking = require('../../util/isStreamWorking');
 
 window.rtc = rtc;
 
@@ -26,6 +27,10 @@ rtc.getUserMedia(function(err, stream){
   if (err) {
     return console.error(err);
   }
+  isStreamWorking(stream, function(err, res){
+    console.log(err, res);
+  });
+
   var initiator = new Peer({
     initiator: true,
     stream: stream,
@@ -52,10 +57,10 @@ rtc.getUserMedia(function(err, stream){
 
   initiator.once('stream', function(stream){
     console.log('got stream');
-    crel(document.body, makeVideo(stream));
+    //crel(document.body, makeVideo(stream));
   });
 
   receiver.once('stream', function(stream){
-    crel(document.body, makeVideo(stream));
+    //crel(document.body, makeVideo(stream));
   });
 });
