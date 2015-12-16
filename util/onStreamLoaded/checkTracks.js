@@ -2,7 +2,7 @@
 
 function isTrackEnabled(t){
   return t.kind === forType && t.enabled &&
-    !t.muted && t.readyState isnt 'ended';
+    !t.muted && t.readyState !== 'ended';
 }
 
 function checkTracks(stream, forType){
