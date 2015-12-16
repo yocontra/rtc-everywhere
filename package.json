@@ -23,6 +23,7 @@
     "rtcpeerconnection"
   ],
   "dependencies": {
+    "async": "^1.5.0",
     "browserify-optional": "^1.0.0",
     "crel": "^2.1.8",
     "detect-browser": "^1.2.0",
