@@ -3,6 +3,7 @@
 var findPlatform = require('./lib/findPlatform');
 
 module.exports = function(opt) {
+  if (!opt) opt = {};
   var match = findPlatform();
   var ctors = match.platform.rtc(opt);
   var gum = match.platform.gum(opt);
