@@ -1,6 +1,6 @@
 'use strict';
 
-var checkTracks = require('./checkTracks');
+var hasValidTrack = require('./hasValidTrack');
 var crel = require('crel');
 var timeoutTime = 20000;
 
@@ -10,7 +10,7 @@ var timeoutTime = 20000;
 // - wait for onplaying event
 
 function isVideoWorking(stream, cb){
-  if (!checkTracks(stream, 'video')) return cb('dead video');
+  if (!hasValidTrack(stream, 'video')) return cb('dead video');
   if (stream._videoMeta) return cb(null, stream._videoMeta);
 
   var vidEl, actualEl;

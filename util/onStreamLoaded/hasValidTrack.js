@@ -5,8 +5,8 @@ function isTrackEnabled(t){
     !t.muted && t.readyState !== 'ended';
 }
 
-function checkTracks(stream, forType){
+function hasValidTrack(stream, forType){
   return stream.getTracks().some(isTrackEnabled);
 }
 
-module.exports = checkTracks;
+module.exports = hasValidTrack;
