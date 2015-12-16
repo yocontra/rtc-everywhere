@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function() {
-  var getUserMedia = navigator.getUserMedia ||
-    navigator.msGetUserMedia;
-
+module.exports = function(opt) {
   return function(constraints, cb) {
+    var getUserMedia = navigator.getUserMedia ||
+      navigator.msGetUserMedia;
+
     // make constraints optional
     if (arguments.length !== 2) {
       cb = constraints;
@@ -15,6 +15,7 @@ module.exports = function() {
     }
 
     function success(stream) {
+      stream._rtcOpt = opt;
       cb(null, stream);
     }
 

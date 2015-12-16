@@ -2,6 +2,7 @@
 
 var hasValidTrack = require('./hasValidTrack');
 var crel = require('crel');
+var rtc = require('../../');
 var timeoutTime = 20000;
 
 // basic premise:
@@ -12,6 +13,8 @@ var timeoutTime = 20000;
 function isVideoWorking(stream, cb){
   if (!hasValidTrack(stream, 'video')) return cb('dead video');
   if (stream._videoMeta) return cb(null, stream._videoMeta);
+
+  var rtcInst = rtc(stream._rtcOpt);
 
   var vidEl, actualEl;
   var finished = false;
@@ -40,7 +43,7 @@ function isVideoWorking(stream, cb){
     style: 'display: none;'
   });
 
-  actualEl = attach(stream, vidEl);
+  actualEl = rtcInst.attachStream(stream, vidEl);
   actualEl.addEventListener('canplay', canPlay, false);
   actualEl.addEventListener('playing', canPlay, false);
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function() {
+module.exports = function(opt) {
   var temasys = require('../../lib/temasys');
   temasys(); // start loading ahead of time
 
@@ -15,6 +15,7 @@ module.exports = function() {
     }
 
     function success(stream) {
+      stream._rtcOpt = opt;
       cb(null, stream);
     }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function() {
+module.exports = function(opt) {
   var getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia;
 
@@ -15,6 +15,7 @@ module.exports = function() {
     }
 
     function success(stream) {
+      stream._rtcOpt = opt;
       cb(null, stream);
     }
 

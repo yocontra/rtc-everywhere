@@ -4,7 +4,7 @@ function needPlatform(){
   throw new Error('Missing iosrtc plugin for getUserMedia');
 }
 
-module.exports = function() {
+module.exports = function(opt) {
   return function(constraints, cb) {
     if (typeof cordova === 'undefined') return needPlatform();
     if (typeof cordova.plugins === 'undefined') return needPlatform();
@@ -20,6 +20,7 @@ module.exports = function() {
     }
 
     function success(stream) {
+      stream._rtcOpt = opt;
       cb(null, stream);
     }
 

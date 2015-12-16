@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function() {
+module.exports = function(opt) {
   var rtc;
   try {
     rtc = require('react-native-webrtc');
@@ -8,7 +8,6 @@ module.exports = function() {
     return;
   }
   var getUserMedia = navigator.getUserMedia;
-  if (typeof getUserMedia === 'undefined') return;
 
   return function(constraints, cb) {
     // make constraints optional
@@ -21,6 +20,7 @@ module.exports = function() {
     }
 
     function success(stream) {
+      stream._rtcOpt = opt;
       cb(null, stream);
     }
 
