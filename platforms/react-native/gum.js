@@ -5,11 +5,11 @@ module.exports = function(opt) {
   try {
     rtc = require('react-native-webrtc');
   } catch (err) {
-    return;
+    throw new Error('Missing react-native-webrtc!');
   }
-  var getUserMedia = navigator.getUserMedia;
-
   return function(constraints, cb) {
+    var getUserMedia = navigator.getUserMedia;
+
     // make constraints optional
     if (arguments.length !== 2) {
       cb = constraints;

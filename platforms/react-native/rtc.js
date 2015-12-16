@@ -5,7 +5,7 @@ module.exports = function() {
   try {
     rtc = require('react-native-webrtc');
   } catch (err) {
-    return;
+    throw new Error('Missing react-native-webrtc!');
   }
   return {
     RTCPeerConnection: rtc.RTCPeerConnection,
