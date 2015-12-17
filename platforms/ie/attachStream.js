@@ -3,7 +3,7 @@
 module.exports = function(){
   var copyStyle = require('../../lib/copyStyle');
   var temasys = require('../../lib/temasys');
-  return function(el, stream) {
+  return function(stream, el) {
     var newVideo = temasys.createVideo(stream);
     copyStyle(el, newVideo);
 

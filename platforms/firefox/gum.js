@@ -5,6 +5,10 @@ module.exports = function(opt) {
     var getUserMedia = navigator.getUserMedia ||
       navigator.mozGetUserMedia;
 
+    if (!getUserMedia) {
+      throw new Error('Failed to find getUserMedia');
+    }
+
     // make constraints optional
     if (arguments.length !== 2) {
       cb = constraints;

@@ -44,8 +44,8 @@ function isVideoWorking(stream, cb){
   });
 
   actualEl = rtcInst.attachStream(stream, vidEl);
-  actualEl.addEventListener('canplay', canPlay, false);
-  actualEl.addEventListener('playing', canPlay, false);
+  actualEl.addEventListener('canplay', finishIt.bind(null, null), false);
+  actualEl.addEventListener('playing', finishIt.bind(null, null), false);
 }
 
 module.exports = isVideoWorking;

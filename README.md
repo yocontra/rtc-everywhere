@@ -44,6 +44,7 @@ var rtc = require('rtc-everywhere')();
 // rtc.RTCIceCandidate
 // rtc.RTCSessionDescription
 // rtc.getUserMedia
+// rtc.attachStream(stream, videoElement)
 ```
 
 ### API
@@ -70,6 +71,14 @@ var rtc = require('rtc-everywhere')();
 rtc.getUserMedia(function(err, stream){});
 rtc.getUserMedia({video: true, audio: true}, function(err, stream){});
 ```
+
+#### attachStream(stream, element)
+
+- Attaches a stream to a given video element
+- Returns the element the video was attached to
+- In IE and Safari, the video element will be replaced by an `object` element
+  - Elements will not be replaced or modified unless they exist on the DOM
+  - Regardless of replacement, the new `object` element will be returned
 
 ### Related Libraries
 - [simple-peer](https://github.com/feross/simple-peer)

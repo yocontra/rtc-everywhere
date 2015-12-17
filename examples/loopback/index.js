@@ -1,10 +1,10 @@
-require('es5-shim-sham');
+//require('es5-shim-sham');
 
 var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
 var browser = require('detect-browser');
-var isStreamWorking = require('../../util/isStreamWorking');
+var onStreamLoaded = require('../../util/onStreamLoaded');
 
 window.rtc = rtc;
 
@@ -17,7 +17,7 @@ function makeVideo(stream) {
   var el = crel('video', {
     muted: true,
     autoplay: true,
-    className: 'video-stream'
+    className: 'video-stream',
     style: 'height:100px; width:100px; display:inline-block; background-color:black;'
   });
   return rtc.attachStream(el, stream);
@@ -27,7 +27,7 @@ rtc.getUserMedia(function(err, stream){
   if (err) {
     return console.error(err);
   }
-  isStreamWorking(stream, function(err, res){
+  onStreamLoaded(stream, function(err, res){
     console.log(err, res);
   });
 

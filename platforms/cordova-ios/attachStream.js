@@ -7,7 +7,7 @@ function needPlatform(){
 module.exports = function(){
   var URL = window.URL || window.webkitURL;
 
-  return function(el, stream) {
+  return function(stream, el) {
     if (typeof cordova === 'undefined') return needPlatform();
     if (typeof cordova.plugins === 'undefined') return needPlatform();
     if (typeof cordova.plugins.iosrtc === 'undefined') return needPlatform();

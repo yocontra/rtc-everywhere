@@ -6,8 +6,8 @@ var isVideoWorking = require('./isVideoWorking');
 
 function isStreamWorking(opt, stream, cb) {
   if (arguments.length !== 3) {
-    stream = opt;
     cb = stream;
+    stream = opt;
     opt = null;
   }
   if (!opt) {

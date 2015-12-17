@@ -1,10 +1,14 @@
 'use strict';
 
 module.exports = function(opt) {
-  var getUserMedia = navigator.getUserMedia ||
-    navigator.webkitGetUserMedia;
-
   return function(constraints, cb) {
+    var getUserMedia = navigator.getUserMedia ||
+      navigator.webkitGetUserMedia;
+
+    if (!getUserMedia) {
+      throw new Error('Failed to find getUserMedia');
+    }
+
     // make constraints optional
     if (arguments.length !== 2) {
       cb = constraints;

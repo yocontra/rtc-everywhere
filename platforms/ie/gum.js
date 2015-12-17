@@ -1,5 +1,7 @@
 'use strict';
 
+// TODO: handle not installed
+
 module.exports = function(opt) {
   var temasys = require('../../lib/temasys');
   temasys(); // start loading ahead of time
@@ -24,6 +26,10 @@ module.exports = function(opt) {
     }
 
     temasys(function(rtc){
+      if (!rtc || !rtc.getUserMedia) {
+        throw new Error('Failed to find getUserMedia');
+      }
+
       rtc.getUserMedia(constraints, success, error);
     });
   };
