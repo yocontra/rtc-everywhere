@@ -20,7 +20,7 @@ function makeVideo(stream) {
     className: 'video-stream',
     style: 'height:100px; width:100px; display:inline-block; background-color:black;'
   });
-  return rtc.attachStream(el, stream);
+  return rtc.attachStream(stream, el);
 }
 
 rtc.getUserMedia(function(err, stream){
@@ -57,10 +57,10 @@ rtc.getUserMedia(function(err, stream){
 
   initiator.once('stream', function(stream){
     console.log('got stream');
-    //crel(document.body, makeVideo(stream));
+    crel(document.body, makeVideo(stream));
   });
 
   receiver.once('stream', function(stream){
-    //crel(document.body, makeVideo(stream));
+    crel(document.body, makeVideo(stream));
   });
 });
