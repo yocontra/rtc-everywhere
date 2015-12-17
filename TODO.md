@@ -1,3 +1,5 @@
+![](https://media.giphy.com/media/5cjz1jJrsJ7G0/giphy.gif)
+
 # IE/Safari
 
 - test on IE
