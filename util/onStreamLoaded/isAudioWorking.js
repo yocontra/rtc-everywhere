@@ -14,6 +14,7 @@ function isAudioWorking(stream, cb){
   if (typeof cordova !== 'undefined') return cb();
   var finished = false;
   var listener = onMicChange(stream, handleMicEvent);
+  if (!listener) return cb(); // raw audio not supported
   var timeout = setTimeout(finishIt.bind(null, 'no microphone data'), timeoutTime);
 
   function finishIt(err){

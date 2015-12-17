@@ -4,7 +4,9 @@ module.exports = function(){
   var copyStyle = require('../../lib/copyStyle');
   var temasys = require('../../lib/temasys');
   return function(stream, el) {
-    var newVideo = temasys.createVideo(stream);
+    var newVideo = temasys.createVideo(stream, {
+      muted: Boolean(el.muted)
+    });
     copyStyle(el, newVideo);
 
     // replace el if needed
@@ -13,7 +15,6 @@ module.exports = function(){
       container.insertBefore(newVideo);
       container.removeChild(el);
     }
-
     return newVideo;
   };
 };

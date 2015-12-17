@@ -23,11 +23,13 @@
     "rtcpeerconnection"
   ],
   "dependencies": {
+    "add-event-listener": "0.0.1",
     "async": "^1.5.0",
     "browserify-optional": "^1.0.0",
     "crel": "^2.1.8",
     "detect-browser": "^1.2.0",
     "domready": "^1.0.8",
+    "lodash.merge": "^3.3.2",
     "new-operator": "^1.0.3",
     "ortc-adapter": "^0.1.6",
     "uuid": "^2.0.1",
