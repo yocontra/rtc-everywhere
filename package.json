@@ -45,12 +45,12 @@
     "mocha": "^2.3.4",
     "mochify": "dylanfm/mochify.js",
     "mochify-istanbul": "^2.1.1",
-    "should": "^7.0.0",
+    "should": "^8.0.0",
     "simple-peer": "^5.11.6",
     "watchify": "^3.6.1"
   },
-  "optionalDependencies": {
-    "react-native-webrtc": "^0.1.5"
+  "peerDependencies": {
+    "react-native-webrtc": "^0.2.7"
   },
   "main": "./index.js",
   "scripts": {
