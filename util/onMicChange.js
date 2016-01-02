@@ -17,14 +17,17 @@ module.exports = function(stream, cb) {
   var ctx = new AudioContext();
   var src = ctx.createMediaStreamSource(stream);
   var meter = watchVolume(ctx, meterOpt, cb);
+  var gain = ctx.createGain();
+  gain.gain.value = 0;
   src.connect(meter);
-  src.connect(ctx.createGain());
+  src.connect(gain);
 
   return {
     end: function(){
       // TODO: verify this works
-      meter.stop();
-      ctx.close();
+      if (meter.stop) meter.stop();
+      if (gain.stop) gain.stop();
+      if (ctx.close) ctx.close();
       src.disconnect();
     }
   };

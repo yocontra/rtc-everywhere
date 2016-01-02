@@ -7,28 +7,30 @@ var browser = require('detect-browser');
 var onStreamLoaded = require('../../util/onStreamLoaded');
 
 window.rtc = rtc;
+bootstrap();
 
-function debug(peer){
-  peer.on('signal', function(m){
-    console.debug('[debug] signal', m);
-  });
-}
-function makeVideo(stream) {
-  var el = crel('video', {
-    muted: true,
-    autoplay: true,
-    className: 'video-stream',
-    style: 'height:100px; width:100px; display:inline-block; background-color:black;'
-  });
-  return rtc.attachStream(stream, el);
-}
 
-rtc.getUserMedia(function(err, stream){
-  if (err) {
-    return console.error(err);
+function bootstrap(){
+  console.log('Platform:', rtc.platform);
+  console.debug('Inspect:', rtc);
+
+  if (rtc.platform === 'unsupported') {
+    console.error('Platform not supported!');
+    return;
   }
+
+  rtc.getUserMedia(function(err, stream){
+    if (err) {
+      return console.error(err);
+    }
+    createLoopback(stream);
+  });
+}
+
+function createLoopback(stream){
   onStreamLoaded(stream, function(err, res){
-    console.log(err, res);
+    if (err) console.error('StreamLoaded error:', err);
+    if (res) console.log('StreamLoaded:', res);
   });
 
   var initiator = new Peer({
@@ -52,15 +54,31 @@ rtc.getUserMedia(function(err, stream){
   receiver.on('signal', initiator.signal.bind(initiator));
 
   initiator.once('connect', function(){
-    console.log('Connected!');
+    console.debug('Connected!');
   });
 
   initiator.once('stream', function(stream){
-    console.log('got stream');
+    console.debug('Stream relayed between peers');
     crel(document.body, makeVideo(stream));
   });
 
   receiver.once('stream', function(stream){
     crel(document.body, makeVideo(stream));
   });
-});
+}
+
+function debug(peer){
+  peer.on('signal', function(m){
+    console.debug('Signal:', m);
+  });
+}
+
+function makeVideo(stream) {
+  var el = crel('video', {
+    muted: true,
+    autoplay: true,
+    className: 'video-stream',
+    style: 'height:100px; width:100px; display:inline-block; background-color:black;'
+  });
+  return rtc.attachStream(stream, el);
+}

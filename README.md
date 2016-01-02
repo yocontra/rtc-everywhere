@@ -15,7 +15,7 @@ TODO: More documentation inbound
 - Chrome
 - Firefox
 - Safari 7+ (via Temasys Plugin)
-- Internet Explorer 9+ (via Temasys Plugin)
+- Internet Explorer 9+ (via Temasys Plugin) [In Progress]
 - MS Edge (via ORTC -> WebRTC polyfill)
 
 #### Mobile
@@ -23,12 +23,12 @@ TODO: More documentation inbound
 - Android 5+
 - Cordova iOS (via cordova-iosrtc)
 - Cordova Android (via cordova-crosswalk)
-- react-native iOS (via react-native-webrtc)
-- react-native Android (via react-native-webrtc)
+- react-native iOS (via react-native-webrtc) [In Progress]
+- react-native Android (via react-native-webrtc) [In Progress]
 
 #### Other
 
-- Node.js 0.10+ (via wrtc)
+- Node.js 0.10+ (via wrtc) [In Progress]
 
 ### Example
 
