@@ -14,17 +14,22 @@ TODO: More documentation inbound
 
 - Chrome
 - Firefox
-- Safari 7+ (via Temasys Plugin)
-- Internet Explorer 9+ (via Temasys Plugin) [In Progress]
-- MS Edge (via ORTC -> WebRTC polyfill)
+- MS Edge [Partial]
+  - No data channels
+- Safari 7+
+  - Requires Temasys Plugin
+- Internet Explorer 9+ [In Progress]
+  - Requires Temasys Plugin
 
 #### Mobile
 
 - Android 5+
-- Cordova iOS (via cordova-iosrtc)
-- Cordova Android (via cordova-crosswalk)
-- react-native iOS (via react-native-webrtc) [In Progress]
-- react-native Android (via react-native-webrtc) [In Progress]
+- Cordova iOS
+  - Requires cordova-iosrtc
+- Cordova Android
+  - Requires cordova-crosswalk
+- react-native iOS/Android [In Progress]
+  - Requires react-native-webrtc
 
 #### Other
 
