@@ -1,11 +1,13 @@
 //require('es5-shim-sham');
 
-var rtc = require('../../')();
+var ctor = require('../../');
+var rtc = ctor();
 var Peer = require('simple-peer');
 var crel = require('crel');
 var browser = require('detect-browser');
 var onStreamLoaded = require('../../util/onStreamLoaded');
 
+window.ctor = ctor;
 window.rtc = rtc;
 bootstrap();
 

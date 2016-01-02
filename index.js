@@ -4,7 +4,7 @@ var findPlatform = require('./lib/findPlatform');
 
 module.exports = function(opt) {
   if (!opt) opt = {};
-  var match = findPlatform();
+  var match = findPlatform(opt);
   var ctors = match.platform.rtc(opt);
   var gum = match.platform.gum(opt);
   var attachStream = match.platform.attachStream(opt);
@@ -20,3 +20,5 @@ module.exports = function(opt) {
     attachStream: attachStream
   };
 };
+
+module.exports.platforms = findPlatform.platforms;
