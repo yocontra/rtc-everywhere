@@ -19,16 +19,23 @@ module.exports = function(stream, cb) {
   var meter = watchVolume(ctx, meterOpt, cb);
   var gain = ctx.createGain();
   gain.gain.value = 0;
+
+  // stream -> meter -> zero gain -> dest
   src.connect(meter);
-  src.connect(gain);
+  meter.connect(gain);
+  gain.connect(ctx.destination);
 
   return {
     end: function(){
       // TODO: verify this works
+      if (meter.disconnect) meter.disconnect();
+      if (gain.disconnect) gain.disconnect();
+      if (src.disconnect) src.disconnect();
+
       if (meter.stop) meter.stop();
       if (gain.stop) gain.stop();
+      if (src.stop) src.stop();
       if (ctx.close) ctx.close();
-      src.disconnect();
     }
   };
 };

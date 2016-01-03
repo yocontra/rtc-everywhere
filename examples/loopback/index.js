@@ -25,29 +25,32 @@ function bootstrap(){
     if (err) {
       return console.error(err);
     }
+    console.debug('User camera:', stream);
     createLoopback(stream);
   });
 }
 
 function createLoopback(stream){
-  onStreamLoaded(stream, function(err, res){
+  onStreamLoaded(stream.clone(), function(err, res){
     if (err) console.error('StreamLoaded error:', err);
     if (res) console.log('StreamLoaded:', res);
   });
 
   var initiator = new Peer({
     initiator: true,
-    stream: stream,
+    trickle: (rtc.platform === 'edge'),
+    stream: stream.clone(),
     wrtc: rtc
   });
 
   var receiver = new Peer({
-    stream: stream,
+    stream: stream.clone(),
+    trickle: (rtc.platform === 'edge'),
     wrtc: rtc
   });
 
-  //debug(initiator);
-  //debug(receiver);
+  debug(initiator, 'initiator');
+  debug(receiver, 'receiver');
 
   initiator.on('error', console.error.bind(console));
   receiver.on('error', console.error.bind(console));
@@ -60,18 +63,19 @@ function createLoopback(stream){
   });
 
   initiator.once('stream', function(stream){
-    console.debug('Stream relayed between peers');
+    console.debug('Stream relayed receiver -> initiator');
     crel(document.body, makeVideo(stream));
   });
 
   receiver.once('stream', function(stream){
+    console.debug('Stream relayed  initiator -> receiver');
     crel(document.body, makeVideo(stream));
   });
 }
 
-function debug(peer){
+function debug(peer, id){
   peer.on('signal', function(m){
-    console.debug('Signal:', m);
+    console.debug(id, 'signal:', JSON.stringify(m));
   });
 }
 
