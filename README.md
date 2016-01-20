@@ -1,16 +1,14 @@
 # rtc-everywhere [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
-![fancy thing](https://i.imgur.com/xDnqJCo.gif)
+<img src="https://i.imgur.com/xDnqJCo.gif" align="center"/>
 
 ## What is this?
 
-Hidden in the incompatible mess of vendor prefixes, adapters, plugins, extensions, and native modules - WebRTC is available. This library aims to tie the whole ecosystem together and ensure your code works the same in any environment.
-
-TODO: More documentation inbound
+Sick of the incompatible mess of vendor prefixes, adapters, plugins, extensions, and native modules? rtc-everywhere gives you spec-compliant WebRTC in as many environments as possible, all with the same simple code.
 
 ### Supported Environments
 
-#### Desktop
+#### :computer: Desktop
 
 - Chrome
 - Firefox
@@ -21,7 +19,7 @@ TODO: More documentation inbound
 - Internet Explorer 9+ [In Progress]
   - Requires Temasys Plugin
 
-#### Mobile
+#### :iphone: Mobile
 
 - Android 5+
 - Cordova iOS
@@ -35,7 +33,7 @@ TODO: More documentation inbound
 
 - Node.js 0.10+ (via wrtc) [In Progress]
 
-### Example
+### Getting Started
 
 ```
 npm install rtc-everywhere --save
@@ -52,20 +50,27 @@ var rtc = require('rtc-everywhere')();
 // rtc.attachStream(stream, videoElement)
 ```
 
+:crystal_ball: Want a more detailed example that uses these functions? Check out the [loopback stream example!](https://github.com/contra/rtc-everywhere/blob/master/examples/loopback/index.js)
+
 ### API
 #### RTCPeerConnection
-[Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)
+
+Exactly the same as the specification. See the [Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection)!
 
 #### RTCIceCandidate
-[Specification Documentation](http://html5index.org/WebRTC%20-%20RTCIceCandidate.html)
+
+Exactly the same as the specification. See the [Specification Documentation](http://html5index.org/WebRTC%20-%20RTCIceCandidate.html)!
 
 #### RTCSessionDescription
-[Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)
+
+Exactly the same as the specification. See the [Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription)!
 
 #### getUserMedia(constraints, cb)
-[Specification Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia)
+
+Similar to the [specification](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia), but slightly adjusted to have an easier API.
 
 ##### Modifications
+
 - `constraints` is optional (makes things easier)
   - Defaults to `{video: true, audio: true}`
 
@@ -86,19 +91,10 @@ rtc.getUserMedia({video: true, audio: true}, function(err, stream){});
   - Regardless of replacement, the new `object` element will be returned
 
 ### Related Libraries
+
 - [simple-peer](https://github.com/feross/simple-peer)
 - [blob-util](https://github.com/nolanlawson/blob-util)
 
-### LICENSE
-(MIT License)
-
-Copyright (c) 2015 Contra [contra@maricopa.edu](mailto:yo@contra.io)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [downloads-image]: http://img.shields.io/npm/dm/rtc-everywhere.svg
 [npm-url]: https://npmjs.org/package/rtc-everywhere

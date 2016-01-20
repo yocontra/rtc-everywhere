@@ -1,66 +1,33 @@
-//require('es5-shim-sham');
-
-var ctor = require('../../');
-var rtc = ctor();
+var rtc = require('../../')();
 var Peer = require('simple-peer');
 var crel = require('crel');
-var browser = require('detect-browser');
-var onStreamLoaded = require('../../util/onStreamLoaded');
 
-window.ctor = ctor;
-window.rtc = rtc;
-bootstrap();
-
-
-function bootstrap(){
-  console.log('Platform:', rtc.platform);
-  console.debug('Inspect:', rtc);
-
-  if (rtc.platform === 'unsupported') {
-    console.error('Platform not supported!');
-    return;
-  }
-
-  rtc.getUserMedia(function(err, stream){
-    if (err) {
-      return console.error(err);
-    }
-    console.debug('User camera:', stream);
-    createLoopback(stream);
-  });
+if (rtc.platform === 'unsupported') {
+  console.error('Platform not supported!');
 }
 
-function createLoopback(stream){
-  onStreamLoaded(stream.clone(), function(err, res){
-    if (err) console.error('StreamLoaded error:', err);
-    if (res) console.log('StreamLoaded:', res);
-  });
+rtc.getUserMedia(function(err, stream){
+  if (err) return console.error(err);
+  createLoopback(stream);
+});
 
+function createLoopback(stream){
   var initiator = new Peer({
     initiator: true,
-    trickle: (rtc.platform === 'edge'),
-    stream: stream.clone(),
+    stream: stream,
     wrtc: rtc
   });
 
   var receiver = new Peer({
-    stream: stream.clone(),
-    trickle: (rtc.platform === 'edge'),
+    stream: stream,
     wrtc: rtc
   });
-
-  debug(initiator, 'initiator');
-  debug(receiver, 'receiver');
 
   initiator.on('error', console.error.bind(console));
   receiver.on('error', console.error.bind(console));
 
   initiator.on('signal', receiver.signal.bind(receiver));
   receiver.on('signal', initiator.signal.bind(initiator));
-
-  initiator.once('connect', function(){
-    console.debug('Connected!');
-  });
 
   initiator.once('stream', function(stream){
     console.debug('Stream relayed receiver -> initiator');
@@ -73,18 +40,10 @@ function createLoopback(stream){
   });
 }
 
-function debug(peer, id){
-  peer.on('signal', function(m){
-    console.debug(id, 'signal:', JSON.stringify(m));
-  });
-}
-
 function makeVideo(stream) {
   var el = crel('video', {
     muted: true,
-    autoplay: true,
-    className: 'video-stream',
-    style: 'height:100px; width:100px; display:inline-block; background-color:black;'
+    autoplay: true
   });
   return rtc.attachStream(stream, el);
 }
