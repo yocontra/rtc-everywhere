@@ -64,7 +64,7 @@
   "peerDependencies": {
     "react-native-webrtc": "^0.2.7"
   },
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "lint": "jshint index.js lib --exclude node_modules --config .jshintrc --reporter node_modules/jshint-stylish/index.js",
     "test-node": "mocha --recursive --reporter spec",
