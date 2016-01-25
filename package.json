@@ -36,23 +36,35 @@
     "volume-meter": "^2.0.1"
   },
   "devDependencies": {
+    "browserify": "^11.0.1",
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "es5-shim-sham": "0.0.1",
+    "fs": "0.0.2",
+    "gulp": "git+https://github.com/gulpjs/gulp.git#4.0",
+    "gulp-expect-file": "0.0.7",
+    "gulp-filelog": "^0.4.1",
+    "gulp-header": "^1.7.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
     "istanbul-coveralls": "^1.0.1",
     "jshint": "^2.5.11",
     "jshint-stylish": "^2.0.0",
     "mocha": "^2.3.4",
     "mochify": "dylanfm/mochify.js",
     "mochify-istanbul": "^2.1.1",
+    "path": "^0.12.7",
     "should": "^8.0.0",
     "simple-peer": "^5.11.6",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
   },
   "peerDependencies": {
     "react-native-webrtc": "^0.2.7"
   },
-  "main": "./index.js",
+  "main": "index.js",
   "scripts": {
     "lint": "jshint index.js lib --exclude node_modules --config .jshintrc --reporter node_modules/jshint-stylish/index.js",
     "test-node": "mocha --recursive --reporter spec",
