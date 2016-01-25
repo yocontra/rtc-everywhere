@@ -1,0 +1,6 @@
+/*
+ * <%= pkg.name %>.js v<%= pkg.version %>
+ * <%= pkg.description %>
+ * Copyright <%= currentYear %> <%= pkg.author %>
+ * License <%= pkg.license %>
+ */

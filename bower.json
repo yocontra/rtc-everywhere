@@ -1,0 +1,43 @@
+{
+  "name": "rtc-everywhere",
+  "version": "0.0.4",
+  "description": "Cross-everything WebRTC Adapter/Polyfill",
+  "author": "Contra <yo@contra.io> (http://contra.io)",
+  "license": "MIT",
+  "main": "dist/rtc-everywhere.js",
+  "homepage": "http://github.com/contra/rtc-everywhere",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contra/rtc-everywhere.git"
+  },
+  "keywords": [
+    "webrtc",
+    "adapter",
+    "shim",
+    "polyfill",
+    "ios",
+    "android",
+    "chrome",
+    "firefox",
+    "node",
+    "safari",
+    "ortc",
+    "internet explorer",
+    "edge",
+    "getusermedia",
+    "rtcpeerconnection"
+  ],
+  "ignore": [
+    "node_modules",
+    "NO_GIT",
+    "test",
+    "examples",
+    "lib",
+    "platforms",
+    "util",
+    "package.json",
+    ".*",
+    "banner.txt",
+    "*.js"
+  ]
+}
