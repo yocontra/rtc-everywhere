@@ -1,7 +1,7 @@
 {
   "name": "rtc-everywhere",
   "description": "Cross-everything WebRTC Adapter/Polyfill",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "http://github.com/contra/rtc-everywhere",
   "repository": "git://github.com/contra/rtc-everywhere.git",
   "author": "Contra <yo@contra.io> (http://contra.io)",
@@ -33,10 +33,10 @@
     "new-operator": "^1.0.3",
     "ortc-adapter": "^0.1.6",
     "uuid": "^2.0.1",
-    "volume-meter": "^2.0.1"
+    "volume-meter": "^2.0.1",
+    "bulk-require": "^0.2.1"
   },
   "devDependencies": {
-    "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "es5-shim-sham": "0.0.1",
     "istanbul-coveralls": "^1.0.1",
