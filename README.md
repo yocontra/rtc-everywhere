@@ -23,15 +23,16 @@ Sick of the incompatible mess of vendor prefixes, adapters, plugins, extensions,
 
 - Android 5+
 - Cordova iOS
-  - Requires cordova-iosrtc
+  - Requires install of `cordova-iosrtc`
 - Cordova Android
-  - Requires cordova-crosswalk
+  - Requires install of `cordova-crosswalk`
 - react-native iOS/Android [In Progress]
-  - Requires react-native-webrtc
+  - Requires install of `react-native-webrtc`
 
 #### Other
 
-- Node.js 0.10+ (via wrtc) [In Progress]
+- Node.js 0.10+
+  - Requires install of `wrtc`
 
 ### Getting Started
 

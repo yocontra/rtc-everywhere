@@ -1,7 +1,7 @@
 {
   "name": "rtc-everywhere",
   "description": "Cross-everything WebRTC Adapter/Polyfill",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "http://github.com/contra/rtc-everywhere",
   "repository": "git://github.com/contra/rtc-everywhere.git",
   "author": "Contra <yo@contra.io> (http://contra.io)",
@@ -50,6 +50,7 @@
     "watchify": "^3.6.1"
   },
   "peerDependencies": {
+    "wrtc": "^0.0.59",
     "react-native-webrtc": "^0.2.7"
   },
   "main": "./index.js",
