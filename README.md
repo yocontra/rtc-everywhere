@@ -4,7 +4,7 @@
 
 ## What is this?
 
-Sick of the incompatible mess of vendor prefixes, adapters, plugins, extensions, and native modules? rtc-everywhere gives you spec-compliant WebRTC in as many environments as possible, all with the same simple code.
+Sick of the incompatible mess of vendor prefixes, adapters, plugins, extensions, and native modules? rtc-everywhere aims to provide a spec-compliant WebRTC implementation in as many environments as possible.
 
 ### Supported Environments
 
