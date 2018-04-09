@@ -33,6 +33,9 @@ Sick of the incompatible mess of vendor prefixes, adapters, plugins, extensions,
 
 - Node.js 0.10+
   - Requires install of `wrtc`
+  - Only works on x64 Linux, Mac, and Windows
+  - MediaStream APIs are not supported at this time
+  - See [wrtc](https://github.com/js-platform/node-webrtc) for more info.
 
 ### Getting Started
 
